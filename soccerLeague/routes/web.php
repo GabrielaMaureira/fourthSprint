@@ -22,6 +22,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// automatic 
+
+Route::resource('teams', TeamController::class); 
+Route::resource('matches', MatchesController::class);
 
 /**/
 
