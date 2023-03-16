@@ -11,9 +11,7 @@ class Matches extends Model
 {
     use HasFactory;
     
-    protected $fillable = ['local_team_id', 'visiting_team_id', 'match_date', 'local_goals', 'visiting_goals'];
-
-
+    
     public function localTeam(){
         return $this->belongsTo(Team::class, 'local_team_id'); // 'belongsTo' to FK
     }
