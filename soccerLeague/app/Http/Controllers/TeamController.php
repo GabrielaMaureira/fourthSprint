@@ -38,7 +38,13 @@ class TeamController extends Controller
      */
     public function store(SaveTeamRequest $request)
     {
-        $team = Team::create($request->validated());
+        $data = $request->validated(); // data from user validated.
+
+        if($request->hasFile('image')){ // if this data has an image...
+            $data['image'] = str_replace('public/', '', $request->file('image')->store('public/images'));
+        }
+
+        $team = Team::create($data);
         return redirect()->route('teams.index', $team->id);
     }
     
