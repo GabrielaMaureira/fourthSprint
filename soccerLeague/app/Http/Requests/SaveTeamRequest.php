@@ -25,9 +25,9 @@ class SaveTeamRequest extends FormRequest
     {
         
         return [
-            'name' => 'required',
-            'description' => 'nullable',
-            'image' => 'nullable'
+            'name' => 'required|alpha|max:70',
+            'description' => 'required|alpha|max:500',
+            'image' => 'required|mimes:jpeg,jpg,png|dimensions:min_width=100,min_height=100|max:2048'
         ];
        
     }
