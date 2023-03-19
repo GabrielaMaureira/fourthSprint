@@ -43,7 +43,7 @@ class TeamController extends Controller
         if($request->hasFile('image')){ // if this data has an image...
             $data['image'] = str_replace('public/', '', $request->file('image')->store('public/images'));
         }
-
+        
         $team = Team::create($data);
         return redirect()->route('teams.index', $team->id);
     }
@@ -83,6 +83,9 @@ class TeamController extends Controller
     public function update(SaveTeamRequest $request, $id)
     {
         Team::find($id)->update($request->validated());
+        if($request->hasFile('image')){ // if this data has an image...
+            $data['image'] = str_replace('public/', '', $request->file('image')->store('public/images'));
+        }
         return redirect()->route('teams.index', $id); 
     }
 
