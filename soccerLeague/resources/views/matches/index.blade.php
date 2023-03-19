@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Matches Index</title>
+</head>
+<body>
+	<h1>Matches Index</h1>
+	<a href="{{ route('matches.create') }}">Create new match</a>
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Local Team</th>
+				<th>Visiting Team</th>
+				<th>Match Date</th>
+				<th>Local Goals</th>
+				<th>Visiting Goals</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach($matches as $match)
+			<tr>
+				<td>{{ $match->id }}</td>
+				<td>{{ $match->localTeam->name }}</td>
+				<td>{{ $match->visitingTeam->name }}</td>
+				<td>{{ $match->match_date }}</td>
+				<td>{{ $match->local_goals }}</td>
+				<td>{{ $match->visiting_goals }}</td>
+				<td>
+					<a href="{{ route('matches.show', $match->id) }}">Show</a>
+					<a href="{{ route('matches.edit', $match->id) }}">Edit</a>
+					<form action="{{ route('matches.destroy', $match->id) }}" method="POST">
+						@csrf
+						@method('DELETE')
+						<button type="submit">Delete</button>
+					</form>
+				</td>
+			</tr>
+			@endforeach
+		</tbody>
+	</table>
+</body>
+</html>
