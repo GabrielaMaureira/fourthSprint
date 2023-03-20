@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Create New Match</title>
-</head>
-<body>
+
 	<h1>Create New Match</h1>
 	<form action="{{ route('matches.store') }}" method="POST">
 		@csrf
@@ -32,5 +27,6 @@
 
 		<button type="submit">Create</button>
 	</form>
-</body>
-</html>
+
+    <a href="{{ route('matches.index') }}">Back</a>
+

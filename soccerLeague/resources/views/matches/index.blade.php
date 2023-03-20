@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Matches Index</title>
-</head>
-<body>
-	<h1>Matches Index</h1>
-	<a href="{{ route('matches.create') }}">Create new match</a>
+
+	<h1>Matches</h1>
+	<a href="{{ route('matches.create') }}">NEW MATCH</a>
 	<table>
 		<thead>
 			<tr>
-				<th>ID</th>
-				<th>Local Team</th>
-				<th>Visiting Team</th>
+				<th>Locals</th>
+				<th>Visitors</th>
 				<th>Match Date</th>
 				<th>Local Goals</th>
 				<th>Visiting Goals</th>
@@ -21,7 +15,6 @@
 		<tbody>
 			@foreach($matches as $match)
 			<tr>
-				<td>{{ $match->id }}</td>
 				<td>{{ $match->localTeam->name }}</td>
 				<td>{{ $match->visitingTeam->name }}</td>
 				<td>{{ $match->match_date }}</td>
@@ -40,5 +33,3 @@
 			@endforeach
 		</tbody>
 	</table>
-</body>
-</html>

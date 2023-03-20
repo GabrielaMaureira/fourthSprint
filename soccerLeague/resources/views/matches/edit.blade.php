@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Edit Match</title>
-</head>
-<body>
+
     <h1>Edit Match</h1>
     <form action="{{ route('matches.update', $matches->id) }}" method="POST">
         @csrf
@@ -37,5 +32,4 @@
 
         <button type="submit">Save</button>
     </form>
-</body>
-</html>
+    <a href="{{ route('matches.index') }}">Back</a>
