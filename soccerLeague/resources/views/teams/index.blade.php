@@ -1,19 +1,17 @@
-<h1>Listado de Equipos</h1>
-
+<h1>Teams</h1>
+<a href="{{ route('teams.create') }}">NEW TEAM</a>
 <table>
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-            <th>Imagen</th>
-            <th>Acciones</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Image</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
         @foreach($teams as $team)
             <tr>
-                <td>{{ $team->id }}</td>
                 <td>{{ $team->name }}</td>
                 <td>{{ $team->description }}</td>
                 <td>
@@ -22,12 +20,12 @@
                     @endif
                 </td>
                 <td>
-                    <a href="{{ route('teams.show', $team->id) }}">Ver</a>
-                    <a href="{{ route('teams.edit', $team->id) }}">Editar</a>
-                    <form method="POST" action="{{ route('teams.destroy', $team->id) }}">
+                    <a href="{{ route('teams.show', $team->id) }}">Show</a>
+                    <a href="{{ route('teams.edit', $team->id) }}">Edit</a>
+                    <form  action="{{ route('teams.destroy', $team->id) }}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit">Eliminar</button>
+                        <button type="submit">Delete</button>
                     </form>
                 </td>
             </tr>
@@ -35,4 +33,3 @@
     </tbody>
 </table>
 
-<a href="{{ route('teams.create') }}">Crear Equipo</a>

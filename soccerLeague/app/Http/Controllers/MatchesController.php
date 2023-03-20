@@ -27,8 +27,9 @@ class MatchesController extends Controller
      */
     public function create()
     {
-        $matches = Matches::all();
-        return view('matches.create', compact('matches'));
+        $match = new Matches();
+        $teams = Team::all();
+        return view('matches.create', compact('match', 'teams'));
     }
 
     /**

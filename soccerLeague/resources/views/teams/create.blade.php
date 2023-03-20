@@ -1,18 +1,18 @@
-<h1>Crear Equipo</h1>
+<h1>Create New Team</h1>
 
-<form method="POST" action="{{ route('teams.store') }}" enctype="multipart/form-data">
+<form  action="{{ route('teams.store') }}" method="POST" enctype="multipart/form-data">
     @csrf
-    <label for="name">Nombre:</label>
+    <label for="name">Name:</label>
     <input type="text" id="name" name="name" required>
     <br>
-    <label for="description">Descripción:</label>
+    <label for="description">Description:</label>
     <textarea id="description" name="description" required></textarea>
     <br>
-    <label for="image">Imagen:</label>
+    <label for="image">Image:</label>
     <input type="file" id="image" name="image">
     <br>
-    <button type="submit">Crear</button>
+    <button type="submit">Create</button>
 </form>
 
-<a href="{{ route('teams.index') }}">Volver</a>
+<a href="{{ route('teams.index') }}">Back</a>
 
