@@ -6,6 +6,7 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\MatchesController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,7 +20,7 @@ use App\Http\Controllers\MatchesController;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home'); 
 });
 
 // automatic 
