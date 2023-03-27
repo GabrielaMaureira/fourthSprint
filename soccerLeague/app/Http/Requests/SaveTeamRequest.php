@@ -25,8 +25,8 @@ class SaveTeamRequest extends FormRequest
     {
         
         return [
-            'name' => 'required|alpha|max:70',
-            'description' => 'required|alpha|max:500',
+            'name' => 'required|string|regex:/^[a-zA-Z\s\-\_\.\']+$/|max:70',
+            'description' => 'required|string|regex:/^[a-zA-Z\s\-\_\.\']+$/',
             'image' => 'required|mimes:jpeg,jpg,png|dimensions:min_width=100,min_height=100|max:2048'
         ];
        
