@@ -20,7 +20,7 @@
                     </div>
                     <div class="mb-4">
                         <label class="block text-gray-700 font-bold mb-2" for="description">Description</label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="name" name="name" value="{{ $team->description }}" readonly>
+                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" id="description" name="description" value="{{ $team->description }}" readonly >
                     </div>
                 </div>
             </div>
