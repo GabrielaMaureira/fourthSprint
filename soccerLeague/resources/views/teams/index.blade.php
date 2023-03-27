@@ -32,7 +32,8 @@
 				{{ $team->description }}
                 </td>
                 
-                <td class="px-6 py-4 flex justify-center -space-x-10 ">
+                <!-- ICONS-->
+                <td class="px-4 py-4 flex justify-center  ">
                     <a href="{{ route('teams.show', $team->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><i class="fa-sharp fa-solid fa-eye"></i></a>
                     <a href="{{ route('teams.edit', $team->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><i class="fa-sharp fa-solid fa-pen"></i></a>
 					
@@ -42,7 +43,6 @@
                                 <button type="submit" class="font-medium text-red-600 dark:text-blue-500 hover:underline"><i class="fa-solid fa-trash-can"></i></button>
                     </form>
                
-				
 				</td>
             </tr>
             
