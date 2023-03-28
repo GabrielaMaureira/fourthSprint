@@ -7,6 +7,7 @@ use App\Http\Requests\SaveTeamRequest;
 
 class TeamController extends Controller
 {
+   
     /**
      * Display a listing of the resource.
      *
