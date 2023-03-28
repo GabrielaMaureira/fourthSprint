@@ -212,4 +212,8 @@ return [
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 
+    // Http Error 
+    'log_level' => env('APP_LOG_LEVEL', 'error'),
+
 ];
+
