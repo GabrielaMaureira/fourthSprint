@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@yield('title')</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="https://kit.fontawesome.com/8ca7133f11.js" crossorigin="anonymous"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -30,7 +31,7 @@
                         @endauth
                         <li><a href="{{ route('teams.index') }}" class="text-lg font-bold hover:text-gray-400">Teams</a></li>
                         <li><a href="{{ route('matches.index') }}" class="text-lg font-bold hover:text-gray-400">Matches</a></li>
-
+                    
                     </ul> 
                    
             </nav>
