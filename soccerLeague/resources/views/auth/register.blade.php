@@ -1,4 +1,8 @@
+@extends('layouts.soccerLayout')
+@section('title', 'Registration')
+@section('content')
 <x-guest-layout>
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <form method="POST" action="{{ route('register') }}">
         @csrf
 
@@ -50,3 +54,4 @@
         </div>
     </form>
 </x-guest-layout>
+@endsection
