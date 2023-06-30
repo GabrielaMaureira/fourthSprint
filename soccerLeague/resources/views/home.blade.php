@@ -2,7 +2,7 @@
 @section('title', 'Home')
 @section('content')
 
-<div class="relative overflow-hidden bg-cover bg-no-repeat" style="background-image: url('{{ asset('storage/images/bg-home3png.png') }}'); height: 500px">        
+<div class="relative overflow-hidden bg-cover bg-no-repeat" style="background-image: url({{ asset('storage/images/bg-home3png.png') }}); height: 500px;">
                 <div class="flex h-full items-center justify-center">
                     <div class="px-6 text-center text-white md:px-12">
                         <h1 class="mb-6 text-5xl font-bold">SOCCER MANAGEMENT</h1>
