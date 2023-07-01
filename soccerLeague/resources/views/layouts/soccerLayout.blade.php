@@ -30,11 +30,13 @@
                         <li><a href="{{ route('teams.index') }}" class="text-lg font-bold hover:text-gray-400">Teams</a></li>
                         <li><a href="{{ route('matches.index') }}" class="text-lg font-bold hover:text-gray-400">Matches</a></li>
                         @auth
-                        <li><a href="{{ route('logout') }}" class="text-lg font-bold hover:text-gray-400">Logout</a></li>
+                        <form action="{{ route('logout') }}" method="POST" class="text-lg font-bold hover:text-gray-400" >
+                                @csrf
+                                <button type="submit" class="text-white hover:text-gray-400">Logout</button>
+                        </form>
                         @endauth
-                    
+                        
                     </ul> 
-                   
             </nav>
         </div>
     </header>
