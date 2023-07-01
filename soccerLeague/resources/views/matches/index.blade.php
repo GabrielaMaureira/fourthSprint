@@ -42,7 +42,7 @@
                 <td class="px-6 py-4 flex justify-center -space-x-2">
                     <a href="{{ route('matches.show', $match->id) }}" class="text-blue-600 dark:text-blue-500 hover:underline" title="Show"><i class="fas fa-eye"></i></a>
                     <a href="{{ route('matches.edit', $match->id) }}" class="text-blue-600 dark:text-blue-500 hover:underline" title="Edit"><i class="fas fa-pencil-alt"></i></a>
-                    <form action="{{ route('matches.destroy', $match->id) }}" method="POST" class="inline">
+                    <form action="{{ route('matches.destroy', $match->id) }}" method="POST" class="inline" onsubmit="return confirm('Are you sure you want to delete this match?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="text-red-600 dark:text-blue-500 hover:underline" title="Delete"><i class="fas fa-trash"></i></button>

@@ -37,7 +37,7 @@
                     <a href="{{ route('teams.show', $team->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><i class="fa-sharp fa-solid fa-eye" title="show"></i></a>
                     <a href="{{ route('teams.edit', $team->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><i class="fa-sharp fa-solid fa-pen" title="edit"></i></a>
 					
-                    <form action="{{ route('teams.destroy', $team->id) }}" method="POST" class="inline" >
+                    <form action="{{ route('teams.destroy', $team->id) }}" method="POST" class="inline" onsubmit="return confirm('Are you sure you want to delete this team?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="font-medium text-red-600 dark:text-blue-500 hover:underline"><i class="fa-solid fa-trash-can" title="delete"></i></button>
