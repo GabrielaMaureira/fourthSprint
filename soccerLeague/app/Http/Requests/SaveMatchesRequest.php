@@ -24,11 +24,11 @@ class SaveMatchesRequest extends FormRequest
     public function rules()
     {
         return [
-            'local_team_id' => 'required',
-            'visiting_team_id' => 'required',
+            'local_team_id' => 'required|string',
+            'visiting_team_id' => 'required|string',
             'match_date' => 'required',
-            'local_goals' => 'nullable',
-            'visiting_goals' => 'nullable',
+            'local_goals' => 'required|number',
+            'visiting_goals' => 'required|number',
         ];
     }
 }
