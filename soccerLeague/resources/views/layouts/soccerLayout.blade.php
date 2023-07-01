@@ -26,11 +26,12 @@
                     
                     
                     <ul class="flex space-x-4 sm:ml-4 sm:flex sm:items-center">
-                        @auth
-                        <li><a href="{{ route('dashboard') }}" class="text-lg font-bold hover:text-gray-400">Dashboard</a></li>
-                        @endauth
+                        
                         <li><a href="{{ route('teams.index') }}" class="text-lg font-bold hover:text-gray-400">Teams</a></li>
                         <li><a href="{{ route('matches.index') }}" class="text-lg font-bold hover:text-gray-400">Matches</a></li>
+                        @auth
+                        <li><a href="{{ route('logout') }}" class="text-lg font-bold hover:text-gray-400">Logout</a></li>
+                        @endauth
                     
                     </ul> 
                    
