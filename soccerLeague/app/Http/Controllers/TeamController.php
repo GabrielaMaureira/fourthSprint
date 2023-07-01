@@ -88,7 +88,8 @@ class TeamController extends Controller
             $data['image'] = str_replace('public/', '', $request->file('image')->store('public/images'));
         }
         return redirect()->route('teams.index', $id)->with('success', 'The team was successfully updated.');
-
+    }
+    
     /**
      * Remove the specified resource from storage.
      *
