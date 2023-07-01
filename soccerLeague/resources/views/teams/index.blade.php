@@ -34,13 +34,13 @@
                 
                 <!-- ICONS-->
                 <td class="px-4 py-4 flex justify-center  ">
-                    <a href="{{ route('teams.show', $team->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><i class="fa-sharp fa-solid fa-eye"></i></a>
-                    <a href="{{ route('teams.edit', $team->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><i class="fa-sharp fa-solid fa-pen"></i></a>
+                    <a href="{{ route('teams.show', $team->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><i class="fa-sharp fa-solid fa-eye" title="show"></i></a>
+                    <a href="{{ route('teams.edit', $team->id) }}" class="font-medium text-blue-600 dark:text-blue-500 hover:underline"><i class="fa-sharp fa-solid fa-pen" title="edit"></i></a>
 					
                     <form action="{{ route('teams.destroy', $team->id) }}" method="POST" class="inline" >
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="font-medium text-red-600 dark:text-blue-500 hover:underline"><i class="fa-solid fa-trash-can"></i></button>
+                                <button type="submit" class="font-medium text-red-600 dark:text-blue-500 hover:underline"><i class="fa-solid fa-trash-can" title="delete"></i></button>
                     </form>
                
 				</td>
