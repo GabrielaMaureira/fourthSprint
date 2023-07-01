@@ -41,7 +41,8 @@ class MatchesController extends Controller
     public function store(SaveMatchesRequest $request)
     {
         Matches::create($request->validated());
-        return redirect()->route('matches.index');   
+
+        return redirect()->route('matches.index')->with('success', 'The match was successfully created.');  
     }
 
     /**
@@ -79,7 +80,7 @@ class MatchesController extends Controller
     public function update(SaveMatchesRequest $request, $id)
     {
         $matches = Matches::find($id)->update($request->validated());
-        return redirect()->route('matches.index', $id);
+        return redirect()->route('matches.index', $id)->with('success', 'The match was successfully updated.');
            
     }
 

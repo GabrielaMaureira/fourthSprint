@@ -1,6 +1,13 @@
 @extends('layouts.soccerLayout')
 @section('title', 'Matches')
 @section('content')
+
+@if (session('success'))
+    <div class="mt-4 bg-green-500 border border-green-600 text-white px-4 py-3 rounded">
+        {{ session('success') }}
+    </div>
+@endif
+
 <div class="flex justify-between items-center mb-4">
     <h1 class="text-2xl font-bold mb-4">Matches</h1>
     <a href="{{ route('matches.create') }}" class="inline-block rounded border-2 border-gray-700 px-6 py-2 text-xs font-medium uppercase leading-normal text-gray-700 transition duration-150 ease-in-out hover:border-neutral-100 hover:bg-neutral-500 hover:bg-opacity-10 hover:text-neutral-100 focus:border-neutral-100 focus:text-neutral-100 focus:outline-none focus:ring-0 active:border-neutral-200 active:text-neutral-200 dark:hover:bg-neutral-100 dark:hover:bg-opacity-10" data-te-ripple-init data-te-ripple-color="light">New Match</a>

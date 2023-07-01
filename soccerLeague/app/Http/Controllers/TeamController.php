@@ -46,7 +46,7 @@ class TeamController extends Controller
         }
         
         $team = Team::create($data);
-        return redirect()->route('teams.index', $team->id);
+        return redirect()->route('teams.index', $team->id)->with('success', 'The team was successfully created.');
     }
     
 
@@ -87,8 +87,7 @@ class TeamController extends Controller
         if($request->hasFile('image')){ // if this data has an image...
             $data['image'] = str_replace('public/', '', $request->file('image')->store('public/images'));
         }
-        return redirect()->route('teams.index', $id); 
-    }
+        return redirect()->route('teams.index', $id)->with('success', 'The team was successfully updated.');
 
     /**
      * Remove the specified resource from storage.
