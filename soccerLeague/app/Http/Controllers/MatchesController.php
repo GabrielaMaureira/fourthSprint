@@ -16,7 +16,7 @@ class MatchesController extends Controller
      */
     public function index()
     {
-        $matches = Matches::all();
+        $matches = Matches::simplePaginate(10);
         return view('matches.index', compact('matches'));
     }
 
